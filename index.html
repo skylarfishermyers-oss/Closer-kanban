@@ -72,18 +72,17 @@
   .add-btn { margin: 4px 8px 8px; padding: 7px; border: 1px dashed var(--border2); border-radius: var(--radius); background: none; color: var(--text3); font-size: 12px; font-family: 'DM Sans', sans-serif; cursor: pointer; text-align: left; transition: all .12s; }
   .add-btn:hover { background: var(--surface); color: var(--text); border-color: var(--text3); }
 
-  /* Cards */
   .card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 11px 12px; cursor: grab; transition: border-color .12s, box-shadow .12s; }
   .card:hover { border-color: var(--border2); box-shadow: 0 2px 8px rgba(0,0,0,.06); }
   .card.dragging { opacity: .4; }
   .card.blocked { border-left: 3px solid var(--red); }
   .card-title { font-size: 13px; font-weight: 500; line-height: 1.45; margin-bottom: 8px; color: var(--text); }
   .card-desc { font-size: 11px; color: var(--text2); line-height: 1.5; margin-bottom: 8px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
-  .card-meta { display: flex; align-items: center; gap: 5px; flex-wrap: wrap; margin-bottom: 6px; }
+  .card-meta { display: flex; align-items: center; gap: 5px; flex-wrap: wrap; }
   .card-footer { display: flex; align-items: center; gap: 8px; margin-top: 6px; border-top: 1px solid var(--border); padding-top: 6px; }
   .card-footer-item { font-size: 10px; color: var(--text3); display: flex; align-items: center; gap: 3px; }
-  .card-footer-item.overdue { color: var(--red); }
-  .card-footer-item.due-soon { color: var(--orange); }
+  .card-footer-item.overdue { color: var(--red); font-weight: 600; }
+  .card-footer-item.due-soon { color: var(--orange); font-weight: 600; }
 
   .tag { font-size: 10px; font-weight: 600; padding: 2px 8px; border-radius: 20px; }
   .tag-blue { background: var(--blue-light); color: var(--blue-text); }
@@ -95,16 +94,15 @@
 
   .avatar { width: 22px; height: 22px; border-radius: 50%; background: var(--blue-light); color: var(--blue-text); font-size: 9px; font-weight: 600; display: flex; align-items: center; justify-content: center; margin-left: auto; flex-shrink: 0; }
 
-  .subtask-bar { height: 4px; background: var(--surface2); border-radius: 2px; margin-top: 6px; overflow: hidden; }
+  .subtask-bar { height: 4px; background: var(--surface2); border-radius: 2px; margin-top: 7px; overflow: hidden; }
   .subtask-bar-fill { height: 100%; background: var(--green); border-radius: 2px; transition: width .3s; }
 
-  /* Modals */
   .overlay { position: fixed; inset: 0; background: rgba(0,0,0,.45); display: none; align-items: center; justify-content: center; z-index: 100; }
   .overlay.open { display: flex; }
   .modal { background: var(--surface); border-radius: var(--radius-lg); border: 1px solid var(--border); width: 520px; max-height: 88vh; overflow-y: auto; padding: 24px; position: relative; box-shadow: 0 8px 40px rgba(0,0,0,.16); }
   .modal h2 { font-size: 16px; font-weight: 600; margin-bottom: 4px; letter-spacing: -0.01em; }
-  .modal-section { margin-top: 18px; }
-  .modal-section-title { font-size: 11px; font-weight: 600; color: var(--text2); text-transform: uppercase; letter-spacing: .04em; margin-bottom: 8px; }
+  .modal-section { margin-top: 20px; }
+  .modal-section-title { font-size: 11px; font-weight: 600; color: var(--text2); text-transform: uppercase; letter-spacing: .04em; margin-bottom: 8px; border-top: 1px solid var(--border); padding-top: 16px; }
   .modal label { font-size: 11px; font-weight: 600; color: var(--text2); text-transform: uppercase; letter-spacing: .04em; display: block; margin-top: 14px; margin-bottom: 5px; }
   .modal input[type=text], .modal input[type=date], .modal input[type=number], .modal textarea, .modal select {
     width: 100%; font-family: 'DM Sans', sans-serif; font-size: 13px; padding: 8px 11px;
@@ -113,33 +111,31 @@
   }
   .modal input:focus, .modal textarea:focus, .modal select:focus { border-color: var(--blue); }
   .modal textarea { resize: vertical; min-height: 70px; }
-  .modal-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-  .modal-row3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+  .modal-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 14px; }
+  .modal-row3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-top: 14px; }
+  .modal-row label, .modal-row3 label { margin-top: 0; }
   .modal-actions { display: flex; gap: 8px; margin-top: 20px; justify-content: flex-end; }
   .close-btn { position: absolute; top: 16px; right: 16px; background: none; border: none; font-size: 18px; cursor: pointer; color: var(--text3); line-height: 1; }
   .close-btn:hover { color: var(--text); }
 
-  /* Blocked toggle */
-  .blocked-toggle { display: flex; align-items: center; gap: 8px; margin-top: 14px; padding: 10px 12px; border-radius: var(--radius); border: 1px solid var(--border2); cursor: pointer; user-select: none; transition: background .12s; }
+  .blocked-toggle { display: flex; align-items: center; gap: 10px; margin-top: 14px; padding: 10px 12px; border-radius: var(--radius); border: 1px solid var(--border2); cursor: pointer; user-select: none; transition: all .12s; }
   .blocked-toggle:hover { background: var(--surface2); }
-  .blocked-toggle input { width: auto; margin: 0; cursor: pointer; }
-  .blocked-toggle-label { font-size: 13px; color: var(--text); }
-  .blocked-toggle-sub { font-size: 11px; color: var(--text2); margin-left: auto; }
+  .blocked-toggle input[type=checkbox] { width: auto; margin: 0; cursor: pointer; }
+  .blocked-toggle-label { font-size: 13px; color: var(--text); flex: 1; }
+  .blocked-toggle-sub { font-size: 11px; color: var(--text2); }
   .blocked-toggle.is-blocked { background: var(--red-light); border-color: var(--red); }
-  .blocked-toggle.is-blocked .blocked-toggle-label { color: var(--red-text); font-weight: 500; }
+  .blocked-toggle.is-blocked .blocked-toggle-label { color: var(--red-text); font-weight: 600; }
 
-  /* Subtasks */
-  .subtask-list { margin-top: 4px; display: flex; flex-direction: column; gap: 6px; }
+  .subtask-list { display: flex; flex-direction: column; gap: 6px; margin-bottom: 8px; }
   .subtask-item { display: flex; align-items: center; gap: 8px; padding: 7px 10px; background: var(--surface2); border-radius: var(--radius); border: 1px solid var(--border); }
   .subtask-item input[type=checkbox] { width: auto; flex-shrink: 0; cursor: pointer; }
   .subtask-item-text { font-size: 13px; flex: 1; color: var(--text); }
   .subtask-item-text.done { text-decoration: line-through; color: var(--text3); }
-  .subtask-item-del { background: none; border: none; color: var(--text3); cursor: pointer; font-size: 14px; padding: 0 2px; }
+  .subtask-item-del { background: none; border: none; color: var(--text3); cursor: pointer; font-size: 14px; padding: 0 2px; line-height: 1; }
   .subtask-item-del:hover { color: var(--red); }
-  .subtask-add-row { display: flex; gap: 8px; margin-top: 6px; }
+  .subtask-add-row { display: flex; gap: 8px; }
   .subtask-add-row input { flex: 1; }
 
-  /* AI modal */
   .ai-preview { background: var(--surface2); border-radius: var(--radius); padding: 9px 11px; margin-bottom: 7px; display: flex; align-items: flex-start; gap: 9px; border: 1px solid var(--border); }
   .ai-preview input[type=checkbox] { margin-top: 2px; flex-shrink: 0; width: auto; }
   .ai-preview-title { font-size: 13px; font-weight: 500; line-height: 1.4; }
@@ -148,14 +144,11 @@
   #ai-results { margin-top: 16px; display: none; }
   .ai-results-label { font-size: 11px; font-weight: 600; color: var(--text2); text-transform: uppercase; letter-spacing: .04em; margin-bottom: 10px; }
 
-  /* Export */
   .export-opt { display: block; width: 100%; text-align: left; padding: 12px 14px; border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface2); color: var(--text); font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 500; cursor: pointer; margin-bottom: 8px; transition: background .12s; }
   .export-opt:hover { background: var(--surface); }
   .export-sub { font-size: 11px; color: var(--text2); font-weight: 400; display: block; margin-top: 2px; }
 
   #toast { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); background: #1a1a18; color: #f4f3ef; font-size: 13px; font-weight: 500; padding: 10px 18px; border-radius: var(--radius); display: none; z-index: 200; white-space: nowrap; box-shadow: 0 4px 20px rgba(0,0,0,.2); }
-
-  .divider { border: none; border-top: 1px solid var(--border); margin: 18px 0; }
 </style>
 </head>
 <body>
@@ -195,20 +188,13 @@
     <label>Description</label>
     <textarea id="f-desc" placeholder="Add more detail, context, or notes..."></textarea>
 
-    <div class="modal-row" style="margin-top:14px">
-      <div>
-        <label style="margin-top:0">Column</label>
-        <select id="f-col"></select>
-      </div>
-      <div>
-        <label style="margin-top:0">Assignee</label>
-        <input type="text" id="f-assignee" placeholder="Name or initials">
-      </div>
+    <div class="modal-row">
+      <div><label>Column</label><select id="f-col"></select></div>
+      <div><label>Assignee</label><input type="text" id="f-assignee" placeholder="Name or initials"></div>
     </div>
 
-    <div class="modal-row3" style="margin-top:14px">
-      <div>
-        <label style="margin-top:0">Priority</label>
+    <div class="modal-row3">
+      <div><label>Priority</label>
         <select id="f-priority">
           <option value="none">None</option>
           <option value="low">Low</option>
@@ -216,33 +202,24 @@
           <option value="high">High</option>
         </select>
       </div>
-      <div>
-        <label style="margin-top:0">Due date</label>
-        <input type="date" id="f-due">
-      </div>
-      <div>
-        <label style="margin-top:0">Effort (pts)</label>
-        <input type="number" id="f-effort" placeholder="e.g. 3" min="0" max="100">
-      </div>
+      <div><label>Due date</label><input type="date" id="f-due"></div>
+      <div><label>Effort (pts)</label><input type="number" id="f-effort" placeholder="e.g. 3" min="0" max="999"></div>
     </div>
 
     <label>Labels</label>
     <input type="text" id="f-labels" placeholder="e.g. design, frontend (comma separated)">
 
-    <label id="blocked-label" style="display:none">Blocked</label>
     <div class="blocked-toggle" id="blocked-toggle" onclick="toggleBlocked()">
       <input type="checkbox" id="f-blocked">
       <span class="blocked-toggle-label">Mark as blocked</span>
-      <span class="blocked-toggle-sub">Adds a red indicator to the card</span>
+      <span class="blocked-toggle-sub">Adds a red indicator to this card</span>
     </div>
-
-    <hr class="divider">
 
     <div class="modal-section">
       <div class="modal-section-title">Subtasks</div>
       <div class="subtask-list" id="subtask-list"></div>
       <div class="subtask-add-row">
-        <input type="text" id="subtask-input" placeholder="Add a subtask..." onkeydown="if(event.key==='Enter'){addSubtask();event.preventDefault()}">
+        <input type="text" id="subtask-input" placeholder="Add a subtask and press Enter..." onkeydown="if(event.key==='Enter'){addSubtask();event.preventDefault()}">
         <button class="btn" onclick="addSubtask()">Add</button>
       </div>
     </div>
@@ -257,7 +234,7 @@
 
 <!-- AI modal -->
 <div class="overlay" id="ai-overlay">
-  <div class="modal" style="width:520px">
+  <div class="modal" style="width:540px">
     <button class="close-btn" onclick="closeAIModal()">&#x2715;</button>
     <h2>Parse meeting notes</h2>
     <label>Paste your meeting notes or transcript</label>
@@ -284,7 +261,7 @@
     <button class="close-btn" onclick="closeExportModal()">&#x2715;</button>
     <h2>Export board</h2>
     <button class="export-opt" onclick="exportCSV()">&#x1F4C4; Download as CSV<span class="export-sub">Import into Google Sheets via File &gt; Import</span></button>
-    <button class="export-opt" onclick="exportICS()">&#x1F4C5; Download as ICS<span class="export-sub">Import calendar events into Google Calendar</span></button>
+    <button class="export-opt" onclick="exportICS()">&#x1F4C5; Download as ICS<span class="export-sub">Only cards with due dates are included</span></button>
     <button class="export-opt" onclick="copyJSON()">&#x1F4CB; Copy as JSON<span class="export-sub">For developer or Apps Script use</span></button>
   </div>
 </div>
@@ -292,7 +269,7 @@
 <div id="toast"></div>
 
 <script>
-let CFG = { scriptUrl: 'https://script.google.com/macros/s/AKfycbyFNwOjz8ecoxWGxRm31se2o6ySETnSTJJTIX68Mb7RNC3xOY4uCDV0KjueIlyvj9UY/exec' };
+let CFG = { scriptUrl: 'https://script.google.com/macros/s/AKfycbxoph8jJthLf85r5T1z1NbKeHCrvdrtCJf4qwPAvn-h3EOKH3O2UU-tPaj1X9Mfstuy/exec' };
 const COLS = ['Backlog','To Do','In Progress','Review','Done'];
 const PRI_TAG = { low:'tag-teal', medium:'tag-amber', high:'tag-coral', none:'' };
 
@@ -308,7 +285,6 @@ let state = { cols: COLS, cards: [
 
 let dragCard = null, editingId = null, editingSubtasks = [];
 
-// ── Utilities ────────────────────────────────────────────────
 function uid() { return 'c' + Date.now() + Math.random().toString(36).slice(2,6); }
 function suid() { return 's' + Date.now() + Math.random().toString(36).slice(2,5); }
 function initials(n) { return n ? n.trim().split(/\s+/).map(w=>w[0].toUpperCase()).join('').slice(0,2) : '?'; }
@@ -334,11 +310,9 @@ function dueDateClass(due) {
 }
 function formatDate(due) {
   if (!due) return '';
-  const d = new Date(due + 'T00:00:00');
-  return d.toLocaleDateString('en-US', {month:'short', day:'numeric'});
+  return new Date(due + 'T00:00:00').toLocaleDateString('en-US', {month:'short', day:'numeric'});
 }
 
-// ── Settings ─────────────────────────────────────────────────
 function toggleSettings() {
   const p = document.getElementById('settings-panel');
   p.classList.toggle('open');
@@ -352,9 +326,6 @@ function saveSettings() {
   pullFromSheet();
 }
 
-// ── Sync ─────────────────────────────────────────────────────
-const HEADERS = ['ID','Title','Column','Assignee','Priority','Labels','Description','Blocked','DueDate','Effort','Subtasks','Last Updated'];
-
 async function pullFromSheet() {
   if (!CFG.scriptUrl) { setStatus('error','No URL — click Settings'); return; }
   setStatus('syncing','Connecting...');
@@ -366,7 +337,7 @@ async function pullFromSheet() {
     if (data.cards && data.cards.length > 0) {
       state.cards = data.cards.map(c => ({
         ...c,
-        subtasks: typeof c.subtasks === 'string' ? (c.subtasks ? JSON.parse(c.subtasks) : []) : (c.subtasks || []),
+        subtasks: typeof c.subtasks === 'string' ? (c.subtasks ? tryParseJSON(c.subtasks, []) : []) : (c.subtasks || []),
         blocked: c.blocked === true || c.blocked === 'true' || c.blocked === 'TRUE'
       }));
       localSave(); render();
@@ -381,13 +352,17 @@ async function pullFromSheet() {
   }
 }
 
+function tryParseJSON(str, fallback) {
+  try { return JSON.parse(str); } catch(e) { return fallback; }
+}
+
 async function pushToSheet(cards) {
   if (!CFG.scriptUrl) return;
   setStatus('syncing','Syncing...');
   try {
     const payload = cards.map(c => ({
       ...c,
-      subtasks: JSON.stringify(c.subtasks || [])
+      subtasks: typeof c.subtasks === 'string' ? c.subtasks : JSON.stringify(c.subtasks || [])
     }));
     const r = await fetch(CFG.scriptUrl, {
       method: 'POST',
@@ -407,7 +382,6 @@ async function pushToSheet(cards) {
 
 async function manualSync() { await pullFromSheet(); }
 
-// ── Render ───────────────────────────────────────────────────
 function render() {
   const board = document.getElementById('board');
   board.innerHTML = '';
@@ -437,27 +411,19 @@ function cardHTML(c) {
   const blocked = c.blocked ? `<span class="tag tag-red">&#9632; blocked</span>` : '';
   const av = c.assignee ? `<div class="avatar" title="${c.assignee}">${initials(c.assignee)}</div>` : '';
   const desc = c.description ? `<div class="card-desc">${c.description}</div>` : '';
-
   const subtasks = c.subtasks || [];
   const stDone = subtasks.filter(s=>s.done).length;
-  const stBar = subtasks.length > 0 ? `
-    <div class="subtask-bar" title="${stDone}/${subtasks.length} subtasks done">
-      <div class="subtask-bar-fill" style="width:${Math.round(stDone/subtasks.length*100)}%"></div>
-    </div>` : '';
-
+  const stBar = subtasks.length > 0 ? `<div class="subtask-bar" title="${stDone}/${subtasks.length} subtasks"><div class="subtask-bar-fill" style="width:${Math.round(stDone/subtasks.length*100)}%"></div></div>` : '';
   const dueClass = dueDateClass(c.dueDate);
   const footerItems = [];
   if (c.dueDate) footerItems.push(`<span class="card-footer-item ${dueClass}">&#128197; ${formatDate(c.dueDate)}</span>`);
   if (c.effort) footerItems.push(`<span class="card-footer-item">&#9654; ${c.effort}pts</span>`);
   if (subtasks.length > 0) footerItems.push(`<span class="card-footer-item">&#9744; ${stDone}/${subtasks.length}</span>`);
   const footer = footerItems.length > 0 ? `<div class="card-footer">${footerItems.join('')}</div>` : '';
-
   return `<div class="card${c.blocked?' blocked':''}" id="card-${c.id}" draggable="true" onclick="openEditCard('${c.id}')">
     <div class="card-title">${c.title}</div>
-    ${desc}
-    <div class="card-meta">${blocked}${pri}${labels}${av}</div>
-    ${stBar}
-    ${footer}
+    ${desc}<div class="card-meta">${blocked}${pri}${labels}${av}</div>
+    ${stBar}${footer}
   </div>`;
 }
 
@@ -492,12 +458,11 @@ function getDragAfter(container, y) {
   }, {offset:-Infinity}).element || null;
 }
 
-// ── Card modal ───────────────────────────────────────────────
 function openNewCard(col) {
-  editingId = null;
-  editingSubtasks = [];
+  editingId = null; editingSubtasks = [];
   document.getElementById('card-modal-title').textContent = 'New card';
-  ['f-title','f-assignee','f-labels','f-desc','f-due','f-effort'].forEach(id=>document.getElementById(id).value='');
+  ['f-title','f-assignee','f-labels','f-desc','f-effort'].forEach(id=>document.getElementById(id).value='');
+  document.getElementById('f-due').value = '';
   document.getElementById('f-priority').value = 'none';
   document.getElementById('f-blocked').checked = false;
   document.getElementById('blocked-toggle').classList.remove('is-blocked');
@@ -539,8 +504,7 @@ function toggleBlocked() {
 }
 
 function renderSubtasks() {
-  const list = document.getElementById('subtask-list');
-  list.innerHTML = editingSubtasks.map((s,i) => `
+  document.getElementById('subtask-list').innerHTML = editingSubtasks.map((s,i) => `
     <div class="subtask-item">
       <input type="checkbox" ${s.done?'checked':''} onchange="toggleSubtask(${i})">
       <span class="subtask-item-text ${s.done?'done':''}">${s.text}</span>
@@ -552,21 +516,11 @@ function addSubtask() {
   const inp = document.getElementById('subtask-input');
   const text = inp.value.trim(); if (!text) return;
   editingSubtasks.push({id:suid(), text, done:false});
-  inp.value = '';
-  renderSubtasks();
-  inp.focus();
+  inp.value = ''; renderSubtasks(); inp.focus();
 }
 
-function toggleSubtask(i) {
-  editingSubtasks[i].done = !editingSubtasks[i].done;
-  renderSubtasks();
-}
-
-function removeSubtask(i) {
-  editingSubtasks.splice(i,1);
-  renderSubtasks();
-}
-
+function toggleSubtask(i) { editingSubtasks[i].done = !editingSubtasks[i].done; renderSubtasks(); }
+function removeSubtask(i) { editingSubtasks.splice(i,1); renderSubtasks(); }
 function closeCardModal() { document.getElementById('card-overlay').classList.remove('open'); editingId=null; editingSubtasks=[]; }
 
 async function saveCard() {
@@ -596,7 +550,6 @@ async function deleteCard() {
   showToast('Card deleted');
 }
 
-// ── AI modal ─────────────────────────────────────────────────
 function openAIModal() { document.getElementById('ai-overlay').classList.add('open'); document.getElementById('ai-results').style.display='none'; document.getElementById('ai-loading').style.display='none'; document.getElementById('ai-notes').value=''; }
 function closeAIModal() { document.getElementById('ai-overlay').classList.remove('open'); }
 
@@ -607,11 +560,9 @@ async function runAIParse() {
   document.getElementById('ai-results').style.display = 'none';
   try {
     const res = await fetch('https://api.anthropic.com/v1/messages', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        model: 'claude-sonnet-4-20250514', max_tokens: 1500,
-        messages: [{role:'user',content:`Extract all action items from these meeting notes. Return ONLY a JSON array, no prose or markdown. Each object: title (string), assignee (first name or ""), priority ("high"/"medium"/"low"/"none"), labels (array of 1-2 short lowercase strings), description (string, any extra context or ""), dueDate (YYYY-MM-DD if mentioned or ""), effort (number estimate of days/points or ""), subtasks (array of short strings for sub-steps if obvious, otherwise []).\n\nNotes:\n${notes}`}]
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ model:'claude-sonnet-4-20250514', max_tokens:1500,
+        messages: [{role:'user',content:`Extract all action items from these meeting notes. Return ONLY a JSON array, no prose or markdown. Each object: title (string), assignee (first name or ""), priority ("high"/"medium"/"low"/"none"), labels (array of 1-2 short lowercase strings), description (string, extra context or ""), dueDate (YYYY-MM-DD if mentioned or ""), effort (number or ""), subtasks (array of short task strings if obvious, else []).\n\nNotes:\n${notes}`}]
       })
     });
     const data = await res.json();
@@ -632,10 +583,11 @@ function renderAIResults(items) {
       <div>
         <div class="ai-preview-title">${item.title}</div>
         <div class="ai-preview-meta">
-          ${item.assignee?'&#128100; '+item.assignee+' &bull; ':''} 
-          ${item.priority&&item.priority!=='none'?item.priority+' priority &bull; ':''}
-          ${item.dueDate?'Due: '+item.dueDate+' &bull; ':''}
+          ${item.assignee?'&#128100; '+item.assignee+' &bull; ':''}
+          ${item.priority&&item.priority!=='none'?item.priority+' &bull; ':''}
+          ${item.dueDate?'Due '+item.dueDate+' &bull; ':''}
           ${(item.labels||[]).join(', ')}
+          ${(item.subtasks||[]).length>0?' &bull; '+item.subtasks.length+' subtasks':''}
         </div>
       </div>
     </div>`).join('');
@@ -649,14 +601,7 @@ async function importAICards() {
   list.querySelectorAll('input[type=checkbox]').forEach((cb,i) => {
     if (cb.checked && items[i]) {
       const item = items[i];
-      state.cards.push({
-        id: uid(), title: item.title, col: 'To Do',
-        assignee: item.assignee||'', priority: item.priority||'none',
-        labels: item.labels||[], description: item.description||'',
-        dueDate: item.dueDate||'', effort: item.effort||'',
-        blocked: false,
-        subtasks: (item.subtasks||[]).map(t=>({id:suid(),text:t,done:false}))
-      });
+      state.cards.push({ id:uid(), title:item.title, col:'To Do', assignee:item.assignee||'', priority:item.priority||'none', labels:item.labels||[], description:item.description||'', dueDate:item.dueDate||'', effort:item.effort||'', blocked:false, subtasks:(item.subtasks||[]).map(t=>({id:suid(),text:t,done:false})) });
     }
   });
   closeAIModal(); localSave(); render();
@@ -664,18 +609,12 @@ async function importAICards() {
   showToast('Cards added and synced');
 }
 
-// ── Export ───────────────────────────────────────────────────
 function openExportModal() { document.getElementById('export-overlay').classList.add('open'); }
 function closeExportModal() { document.getElementById('export-overlay').classList.remove('open'); }
 
 function exportCSV() {
   const h = 'Title,Assignee,Column,Priority,Labels,Description,Blocked,DueDate,Effort,Subtasks';
-  const rows = state.cards.map(c => [
-    `"${c.title}"`, c.assignee||'', c.col, c.priority||'none',
-    (c.labels||[]).join(';'), `"${(c.description||'').replace(/"/g,'""')}"`,
-    c.blocked?'TRUE':'FALSE', c.dueDate||'', c.effort||'',
-    `"${(c.subtasks||[]).map(s=>(s.done?'[x] ':'[ ] ')+s.text).join(' | ')}"`
-  ].join(','));
+  const rows = state.cards.map(c => [`"${c.title}"`,c.assignee||'',c.col,c.priority||'none',(c.labels||[]).join(';'),`"${(c.description||'').replace(/"/g,'""')}"`,c.blocked?'TRUE':'FALSE',c.dueDate||'',c.effort||'',`"${(c.subtasks||[]).map(s=>(s.done?'[x] ':'[ ] ')+s.text).join(' | ')}"`].join(','));
   download('kanban.csv','text/csv',[h,...rows].join('\n'));
   closeExportModal(); showToast('CSV downloaded');
 }
@@ -688,18 +627,12 @@ function exportICS() {
   });
   l.push('END:VCALENDAR');
   download('kanban.ics','text/calendar',l.join('\r\n'));
-  closeExportModal(); showToast('ICS downloaded — only cards with due dates included');
+  closeExportModal(); showToast('ICS downloaded');
 }
 
-function copyJSON() {
-  navigator.clipboard.writeText(JSON.stringify(state,null,2)).then(()=>{ closeExportModal(); showToast('JSON copied to clipboard'); });
-}
+function copyJSON() { navigator.clipboard.writeText(JSON.stringify(state,null,2)).then(()=>{ closeExportModal(); showToast('JSON copied'); }); }
+function download(filename, type, content) { const a=document.createElement('a'); a.href='data:'+type+';charset=utf-8,'+encodeURIComponent(content); a.download=filename; a.click(); }
 
-function download(filename, type, content) {
-  const a = document.createElement('a'); a.href='data:'+type+';charset=utf-8,'+encodeURIComponent(content); a.download=filename; a.click();
-}
-
-// ── Init ─────────────────────────────────────────────────────
 cfgLoad(); localLoad(); render(); pullFromSheet();
 </script>
 </body>
